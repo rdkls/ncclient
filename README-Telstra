@@ -1,0 +1,8 @@
+Readme for usage of ncclient package for Telstra APNaaS
+------------------------------------------------------
+This fork of ncclient is used by the Ansible APNaaS project
+The import of this project is done during the build of the 
+Ansible environment as a pip install from this repo 
+This repo is not regularly updated to the upstream version of
+ncclient; updates are only done on a as needed basis
+
