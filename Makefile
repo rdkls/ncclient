@@ -28,7 +28,7 @@ run: ## RUN TEST CONTAINER
 
 
 exec-test: ## RUN TEST
-	docker exec $(docker-container) nosetests test --rednose --verbosity=3 --exclude=transport --with-coverage --cover-package ncclient
+	docker exec $(docker-container) nosetests test --rednose --verbosity=3 --with-coverage --cover-package ncclient
 
 clean:
 	@test -f  $(CID_FILE) && { docker rm -f $(docker-container); rm $(CID_FILE); } || true;
