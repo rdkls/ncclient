@@ -45,6 +45,10 @@ or via pip:
 
     [ncclient] $ python examples/juniper/*.py
 
+#### Testing
+
+     $ make
+
 ## Usage
 
 ### Get device running config

@@ -1,0 +1,6 @@
+nose
+rednose
+coverage
+coveralls
+mock
+

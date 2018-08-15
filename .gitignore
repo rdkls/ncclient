@@ -6,6 +6,7 @@
 *.pyc
 *.pyo
 *.swp
+*.cid
 bin
 build
 dist
