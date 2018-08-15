@@ -47,7 +47,10 @@ class GetReply(RPCReply):
     def _parsing_hook(self, root):
         self._data = None
         if not self._errors:
-            self._data = root.find(qualify("data"))
+            if self._device_handler.perform_qualify_check():
+                self._data = root.find(qualify("data"))
+            else:
+                self._data = root.find("data")
 
     @property
     def data_ele(self):

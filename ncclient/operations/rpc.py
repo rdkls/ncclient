@@ -127,10 +127,11 @@ class RPCReply(object):
     ERROR_CLS = RPCError
     "Subclasses can specify a different error class, but it should be a subclass of `RPCError`."
 
-    def __init__(self, raw):
+    def __init__(self, raw, device_handler=None):
         self._raw = raw
         self._parsed = False
         self._root = None
+        self._device_handler = device_handler
         self._errors = []
 
     def __repr__(self):
@@ -356,7 +357,7 @@ class RPC(object):
 
     def deliver_reply(self, raw):
         # internal use
-        self._reply = self.REPLY_CLS(raw)
+        self._reply = self.REPLY_CLS(raw, self._device_handler)
         self._event.set()
 
     def deliver_error(self, err):
