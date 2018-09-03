@@ -23,9 +23,11 @@ class EricssonDeviceHandler(DefaultDeviceHandler):
     """
     _EXEMPT_ERRORS = []
 
+
     def __init__(self, device_params):
         super(EricssonDeviceHandler, self).__init__(device_params)
-
+        
+        
     # TODO: Implement Ericsson specific operations
 
     #def add_additional_operations(self):
@@ -51,8 +53,19 @@ class EricssonDeviceHandler(DefaultDeviceHandler):
             'urn:com:ericsson:ipos:exec-cli:1.0',
             'urn:com:ericsson:ipos:invoke-cli:1.0'
         ]
-        
+
         return c
+
 
     def perform_qualify_check(self):
         return False
+
+
+    def get_xml_base_namespace_dict(self):
+        return {None: BASE_NS_1_0}
+
+
+    def get_xml_extra_prefix_kwargs(self):
+        d = self.get_xml_base_namespace_dict()
+        return {"nsmap": d}
+    
