@@ -60,6 +60,8 @@ class EricssonDeviceHandler(DefaultDeviceHandler):
     def perform_qualify_check(self):
         return False
 
+    # These functions were added to remove namespace from RPC as MME does
+    # accept them and returns a 'bad-request' response
 
     def get_xml_base_namespace_dict(self):
         return {None: BASE_NS_1_0}
